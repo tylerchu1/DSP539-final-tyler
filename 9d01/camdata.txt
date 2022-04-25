@@ -1,0 +1,222 @@
+#Camera Information Header
+Date : 2020/9/21
+Time : 12:54
+Camera Type : FASTCAM SA1.1 model 675K-M1
+Head Type : Unknown Child Device
+Camera ID : 15
+Camera Number : 0
+Head Number : 1
+Max Head Number : 1
+Scene Name : 
+User Defined Camera Name : 
+Session Number : 
+Date Record : Unknown
+Time Record : Unknown
+Trigger Time : 0
+Record Rate(fps) : 40000
+Shutter Speed(s) : 1/40000
+Trigger Mode : End
+Original Total Frame : 46569
+Total Frame : 500
+Start Frame : -12900
+Correct Trigger Frame : 0
+Save Step : 1
+Image Width : 768
+Image Height : 160
+Color Type : Mono
+Color Bit : 8
+File Format : TIFF
+EffectiveBit Depth : 12
+EffectiveBit Side : Higher
+Partition Number: 1
+Digits Of File Number : 6
+Device Last Error : -1:0xffffffff
+Comment Text : 
+AnalogBoard Channel Num : 0
+Zero Frame : Exist
+Shutter Type2(nsec) : 24333
+Edge Enhance : 0
+Pre LUT Mode : DEF1
+Pre LUT Brightness : 0
+Pre LUT Contrast : 0
+Pre LUT Gain : 1.0
+Pre LUT Gamma : 1.00
+Pre LUT PosiNega : Posi
+DS Shutter : Value 0
+Scale Method : 1
+Scale Grid Space : 10
+Scale Pixel Size : 0.5744
+Scale Unit : 0
+Scale Magnification : 1.0000
+Scale Ruler : 10
+Scale Distance : 70.0000
+Scale 2Points Distance : 1.0000
+Polarization : 0
+Pola Config : 0
+Pola Save Kind : 0
+Pola Save Comment : 
+Time Code Type : 0
+Time Code Display Unit : 
+Time Code Per Frames : 0.000000
+Time Code Start Value : 0.000000
+Time Code Unit Reset : 0.000000
+Time Code Reset : 0
+Current Time Decimal Place : 0
+Current Time Max Display Unit : 0
+Current Time Decimal Divide : 0
+Not Use : 
+Not Use : 
+Not Use : 
+(Live)Auto Exposure : Off
+Shading : On
+Pixel Gain : Default
+Sync In : ON CAM POS
+General In : EVENT POS
+Trig TTL In : TRIG POS
+General Out1 : SYNC POS
+General Out2 : SYNC POS
+General Out3 : SYNC POS
+Trig TTL Out : TRIG POS
+SYNC OUT Times(times) : 1
+MCDL : Off
+IRIG : Off
+IRIG Phase Lock : Off
+Video Out : NTSC
+Video Out during Memory : Off
+Total Partition : 1
+Current Partition : 1
+Partition 1 : 46569(frame)
+Hardware Partition Increment Mode : Off
+Signal Delay Trigger In(nsec) : 0
+Signal Delay Sync In(nsec) : 0
+Signal Delay General In(nsec) : 0
+Signal Delay VSync Out(nsec) : 0
+Signal Delay Exposure Out(nsec) : 0
+Signal Delay Trigger Out Width(nsec) : 10000
+Signal Delay VSync Out Width(nsec) : 10000
+Locked Shutter Speed : Off
+Hardware Recording Type : READY AND TRIG
+
+#Photron Fastcam Viewer Version Information:
+Saved Date : 2020/9/21
+Saved Time : 13:02
+PFV.exe : 3.6.9.1
+1024PCIInst.exe : 1.1.0.0
+512PCIInst.exe : 1.1.0.0
+node.exe : 0.10.21
+D1024PCI.dll : 2.0.1.0
+D512PCI.dll : 2.0.0.0
+DAPX.dll : 2.0.0.0
+DAPXRS.dll : 2.0.0.0
+DAX.dll : 2.7.0.1
+DAX100.dll : 2.7.0.1
+DAX50.dll : 2.7.0.1
+DBC2.dll : 2.1.0.0
+DIDPEX.dll : 2.0.0.1
+DMC1.dll : 2.1.0.0
+DMH4.dll : 2.2.0.0
+DSA1.dll : 2.4.0.0
+DSA2.dll : 2.2.0.0
+DSA3.dll : 2.2.0.0
+DSA4.dll : 2.3.0.0
+DSA5.dll : 2.4.0.0
+DSA6.dll : 2.2.0.0
+DSA7.dll : 2.2.0.0
+DSA8.dll : 2.2.0.0
+DSAX.dll : 2.3.0.0
+DSAX_B.dll : 2.8.0.0
+DSAZ.dll : 2.8.0.0
+DTX.dll : 2.6.0.0
+DUL512.dll : 2.0.0.0
+DUX.dll : 2.6.0.0
+DUX50.dll : 2.6.0.0
+DWX.dll : 2.5.0.1
+DWX50.dll : 2.5.0.1
+FHSDLCTRL.dll : 1.7.0.0
+FSDCTRL.dll : 2.5.0.0
+GEthLib.dll : 2.2.0.0
+I1394.dll : 2.0.0.0
+IGETHER.dll : 2.2.0.0
+ijl15.dll : 1,51,12,44
+IOPTICAL.dll : 2.0.0.0
+IPCI.dll : 2.0.0.0
+ippcc-6.1.dll : 6,1,137,734
+ippccp8-6.1.dll : 6,1,137,734
+ippccpx-6.1.dll : 6,1,137,734
+ippccs8-6.1.dll : 6,1,137,734
+ippcct7-6.1.dll : 6,1,137,734
+ippccv8-6.1.dll : 6,1,137,734
+ippccw7-6.1.dll : 6,1,137,734
+ippcore-6.1.dll : 6,1,137,790
+ippcv-6.1.dll : 6,1,137,811
+ippcvp8-6.1.dll : 6,1,137,811
+ippcvpx-6.1.dll : 6,1,137,811
+ippcvs8-6.1.dll : 6,1,137,811
+ippcvt7-6.1.dll : 6,1,137,811
+ippcvv8-6.1.dll : 6,1,137,811
+ippcvw7-6.1.dll : 6,1,137,811
+ippi-6.1.dll : 6,1,137,825
+ippip8-6.1.dll : 6,1,137,825
+ippipx-6.1.dll : 6,1,137,825
+ippis8-6.1.dll : 6,1,137,825
+ippit7-6.1.dll : 6,1,137,825
+ippiv8-6.1.dll : 6,1,137,825
+ippiw7-6.1.dll : 6,1,137,825
+libguide40.dll : 20071022
+libiomp5md.dll : 20071022
+libpng12.dll : ???
+libpng13.dll : 1.2.12
+PDCLIB.dll : 2.8.0.0
+PDCPOLA.dll : 1, 0, 1, 0
+PICLIB.dll : 2.3.0.0
+PluginCamera.dll : 1.6.6.1
+PluginDataSave.dll : 1.6.6.1
+PluginFileView.dll : 1.6.6.1
+RET_CALC.dll : 1.0.0.3
+zlib.dll : 1.2.7
+zlib1.dll : 1.2.3
+PluginAngle.pdll : 2.0.0.0
+PluginBatchDataConverter.pdll : 2.0.0.0
+PluginComm.pdll : 2.0.0.0
+PluginCycleView.pdll : 2.2.0.1
+PluginDistance.pdll : 2.0.0.0
+PluginHDR.pdll : 2.0.0.0
+PluginHistogram.pdll : 2.0.0.0
+PluginLEDLaserControl.pdll : 2.0.0.0
+PluginLensControl.pdll : 2.0.0.3
+PluginLineProfile.pdll : 2.0.1.0
+PluginMobileServer.pdll : 2.0.0.0
+PluginMotionDetector.pdll : 2.0.0.1
+PluginPIVFocusMode.pdll : 2.0.0.0
+PluginPolarization.pdll : 2.0.0.0
+PluginPseudoColor.pdll : 2.0.0.0
+PluginSyncCamera.pdll : 2.1.0.0
+
+#System Information:
+OS : Windows 8 An unknown product   (version 6.2 Build 9200)
+Memory : 8104MB RAM
+Processor : Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz
+DirectX : DirectX 12
+
+#Device Information:
+Number of devices : 2
+
+#Device 1 (Current):
+Device Name : FASTCAM SA1.1 model 675K-M1
+Device ID : 015
+Interface : Gigabit Ethernet
+IP Address : 192.168.0.15
+Subnet Mask : 255.255.255.0
+Gateway Address : 0.0.0.0
+Firmware : 2.07
+
+#Device 2:
+Device Name : FASTCAM SA1.1 model 675K-M1
+Device ID : 016
+Interface : Gigabit Ethernet
+IP Address : 192.168.0.16
+Subnet Mask : 255.255.255.0
+Gateway Address : 0.0.0.0
+Firmware : 2.07
+
+END
