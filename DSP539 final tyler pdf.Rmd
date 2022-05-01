@@ -150,7 +150,7 @@ Fontaine et al [1] performed quasistatic tension and bending experiments on thin
 CFE tubes were aged in 3.5% saline at 6000 psi and made to implode by hydrostatic pressure. The intent was to study the effects of saline exposure at high pressure on the implosion and collapse behaviors of these structures. High speed digital photography and 3D digital image correlation was used to record and analyze these events. Additionally, the results derived from this study were compared to previous studies which investigated: the behavior of CFE tubes after saline weathering in atmospheric pressure, and the behavior of CFE laminates after weathering in saline at 6000 psi. From this study and comparing to previous work, the following conclusions were reached:
 - Exposure to saline for extended periods at 6000 psi does not significantly affect the CFE tube’s critical implosion pressure. These results are supported by the conclusions of Fontaine et al. who noted that the elastic moduli of vacuum infused CFE sheets did not change significantly under identical aging conditions. 
 - Comparing results against Javier et al. also support this conclusion because the large differences in collapse behavior noted by Javier et al. were not observed in this work.
-
+ 
 ## References
 
 [1] Fontaine D, LeBlanc J, Shukla A., “Blast response of carbon-fiber/epoxy laminates subjected to long-term seawater exposure at sea floor depth pressures” Composites Part B: Engineering 2021;215:108647. https://doi.org/10.1016/j.compositesb.2021.108647.
