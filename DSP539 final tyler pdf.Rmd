@@ -1,0 +1,160 @@
+---
+title: "DSP539 final tyler"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction and Problem Statement
+
+Composite materials have found many uses in marine environments due to their light weight, corrosion resistance, high strength, and relative ease of shaping. However, despite their resistance to corrosion, they are still susceptible to environmental damage through moisture absorption, temperature, solar radiation, and other such factors. There have been numerous studies on fiber matrix composites specifically to investigate the impact of these environmental factors on various formulations of composites (glass/vinyl ester, carbon fiber/epoxy, kevlar/epoxy, etc). However, there has only been one publication [1] on the impact of moisture degradation on fiber matrix composites kept at seafloor environments: dark, cold, and at ~6000 psi pressure. Their work explores the effect of deep-sea aging on carbon fiber epoxy (CFE) sheets’ properties and behavior when loaded quasistatically in simple tension in both principle directions in plane, in bending, and dynamically under an air-blast load. The work herein is an expansion of the aforementioned publication, and seeks to further explore how the dynamic behavior of CFEs change with aging. Results are compared to those of a previous publication [2] which performed nearly identical experiments, except with specimens aged at atmospheric pressure. 
+
+## Materials and Procedure
+
+Specimens for these experiments are sourced from RockWest Composites (West Jordan, UT). Nominal specimen dimensions are 15 inches long, 1.5 inches outer diameter, and 1.375 inches inner diameter round tube (manufacturer part number 35050-S). 
+
+When seeking to rapidly age specimens in laboratory conditions to simulate real world conditions, an acceleration factor is required which is simply a multiplier applied to laboratory time. Previous experiments determined the acceleration factor for this material under these aging conditions to be 21.5, that is one day aging in the lab is equivalent to 21.5 days real world service. 
+
+Specimens to be aged are first dissecated for at least 48 hours to obtain a consistent baseline, then placed in a custom-built high-pressure vessel with 3.5% saline, and pressurized and heated to such a level as to obtain the 21.5 acceleration factor. Specimens are extracted after 9 and 24 days to be tested. Unweathered specimens are also tested as a control group. 
+
+Testing is performed in a large 2000-gallon high-pressure implosion tank. This tank has viewports for stereo-configured high-speed cameras and their accompanying high intensity light sources. The tube specimens are sealed and waterproofed with endcaps intruding 0.5 inches into each side for a final unsupported length of 14 inches, and placed in the middle of the tank in a specially made fixture such that it can be seen in its totality by the cameras. The tank is sealed and filled nearly to the top with water. Pressure is introduced at a rate of 1-2 psi/second by a high-pressure nitrogen line at the top of the tank until the specimen implodes. The cameras record this implosion event and their data is saved. 
+
+Centerpoint displacement data is extracted by Correlated Solution’s VIC3D software, and analysis and plotting this data is done in the University of Rhode Island’s R-Studio cloud service. 
+
+## Results and Discussion
+
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(curl)
+
+v01dr <- read.csv('~/DSP539 final tyler/V01/CenterdR.csv')
+v01cam <- read.csv('~/DSP539 final tyler/V01/camdata.txt')
+test <- str_split(v01cam[15,1],' : ',simplify = TRUE) 
+v01cam <- as.numeric(test[1,2])
+v01dr=v01dr[-c(1),]
+v01dr$time <- as.numeric(v01dr$P0)/v01cam
+v01dr$vel <- 0
+v01dr$vel[2:1001] <- diff(as.numeric(v01dr$X))/diff(as.numeric(v01dr$time))
+
+v02dr <- read.csv('~/DSP539 final tyler/V02/CenterdR.csv')
+v02cam <- read.csv('~/DSP539 final tyler/V02/camdata.txt')
+test <- str_split(v02cam[15,1],' : ',simplify = TRUE)
+v02cam <- as.numeric(test[1,2])
+v02dr=v02dr[-c(1),]
+v02dr$time <- as.numeric(v02dr$Average)/v02cam
+v02dr$vel <- 0
+v02dr$vel[2:3501] <- diff(as.numeric(v02dr$P0))/diff(as.numeric(v02dr$time))
+
+v03dr <- read.csv('~/DSP539 final tyler/V03/CenterdR.csv')
+v03cam <- read.csv('~/DSP539 final tyler/V03/camdata.txt')
+test <- str_split(v03cam[15,1],' : ',simplify = TRUE) 
+v03cam <- as.numeric(test[1,2])
+v03dr=v03dr[-c(1),]
+v03dr$time <- as.numeric(v03dr$P0)/v03cam
+v03dr$vel <- 0
+v03dr$vel[2:1501] <- diff(as.numeric(v03dr$X))/diff(as.numeric(v03dr$time))
+#
+d901dr <- read.csv('~/DSP539 final tyler/9d01/CenterdR.csv')
+d901cam <- read.csv('~/DSP539 final tyler/9d01/camdata.txt')
+test <- str_split(d901cam[15,1],' : ',simplify = TRUE) 
+d901cam <- as.numeric(test[1,2])
+d901dr$time <- as.numeric(d901dr$P0)/d901cam
+d901dr=d901dr[-c(1),]
+d901dr$vel <- 0
+d901dr$vel[2:500] <- diff(as.numeric(d901dr$X))/diff(as.numeric(d901dr$time))
+
+d903dr <- read.csv('~/DSP539 final tyler/9d03/CenterdR.csv')
+d903cam <- read.csv('~/DSP539 final tyler/9d03/camdata.txt')
+test <- str_split(d903cam[15,1],' : ',simplify = TRUE) 
+d903cam <- as.numeric(test[1,2])
+d903dr$time <- as.numeric(d903dr$P0)/d903cam
+d903dr=d903dr[-c(1),]
+d903dr$vel <- 0
+d903dr$vel[2:500] <- diff(as.numeric(d903dr$X))/diff(as.numeric(d903dr$time))
+#
+d2401dr <- read.csv('~/DSP539 final tyler/24d01/CenterdR.csv')
+d2401cam <- read.csv('~/DSP539 final tyler/24d01/camdata.txt')
+test <- str_split(d2401cam[15,1],' : ',simplify = TRUE) 
+d2401cam <- as.numeric(test[1,2])
+d2401dr$time <- as.numeric(d2401dr$P0)/d2401cam
+d2401dr=d2401dr[-c(1),]
+d2401dr$vel <- 0
+d2401dr$vel[2:1001] <- diff(as.numeric(d2401dr$X))/diff(as.numeric(d2401dr$time))
+
+d2402dr <- read.csv('~/DSP539 final tyler/24d02/CenterdR.csv')
+d2402cam <- read.csv('~/DSP539 final tyler/24d02/camdata.txt')
+test <- str_split(d2402cam[15,1],' : ',simplify = TRUE) 
+d2402cam <- as.numeric(test[1,2])
+d2402dr$time <- as.numeric(d2402dr$Average)/d2402cam
+d2402dr=d2402dr[-c(1),]
+d2402dr$vel <- 0
+d2402dr$vel[2:1501] <- diff(as.numeric(d2402dr$P0))/diff(as.numeric(d2402dr$time))
+
+d2403dr <- read.csv('~/DSP539 final tyler/24d03/CenterdR.csv')
+d2403cam <- read.csv('~/DSP539 final tyler/24d03/camdata.txt')
+test <- str_split(d2403cam[15,1],' : ',simplify = TRUE) 
+d2403cam <- as.numeric(test[1,2])
+d2403dr$time <- as.numeric(d2403dr$P0)/d2403cam
+d2403dr=d2403dr[-c(1),]
+d2403dr$vel <- 0
+d2403dr$vel[2:1001] <- diff(as.numeric(d2403dr$X))/diff(as.numeric(d2403dr$time))
+```
+Six trials were successfully completed: two unweathered specimens, two 9-day specimens, and two 24-day specimens. One experiment from each aging set failed in such a manner that it was difficult or impossible to extract meaningful data. Investigating the raw displacement data:
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+attach(v01dr)
+plot(time,X,xlab='time (s)',ylab='radial displacement (mm)',main='V01 displacement')
+attach(v03dr)
+plot(time,X,xlab='time (s)',ylab='radial displacement (mm)',main='V03 displacement')
+
+attach(d901dr)
+plot(time,X,xlab='time (s)',ylab='radial displacement (mm)',main='9d01 displacement')
+attach(d903dr)
+plot(time,X,xlab='time (s)',ylab='radial displacement (mm)',main='9d03 displacement')
+
+attach(d2401dr)
+plot(time,X,xlab='time (s)',ylab='radial displacement (mm)',main='24d01 displacement')
+attach(d2402dr)
+plot(time,P0,xlab='time (s)',ylab='radial displacement (mm)',main='24d02 displacement')
+```
+
+These plots show the classic time-displacement behavior of an imploding cylinder; *V* indicates virgin or unaged, *9d* indicates 9 days aged, and *24d* indicates 24 day aged. The following two digits is the experiment number. 
+
+There is an initial flat portion before collapse then an extremely rapid decrease in radius as the cylinder flattens. At the end of this drop there is often a severe deceleration (best exemplified in V03 and 24d01), but as composite fracture in this manner is rough and unpredictable there may be a more gentle deceleration (best seen in V01 and 24d02). 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+attach(v01dr)
+plot(time,vel,xlab='time (s)',ylab='velocity (mm/s)',main='V01 velocity')
+attach(v03dr)
+plot(time,vel,xlab='time (s)',ylab='velocity (mm/s)',main='V03 velocity')
+
+attach(d901dr)
+plot(time,vel,xlab='time (s)',ylab='velocity (mm/s)',main='9d01 velocity')
+attach(d903dr)
+plot(time,vel,xlab='time (s)',ylab='velocity (mm/s)',main='9d03 velocity')
+
+attach(d2401dr)
+plot(time,vel,xlab='time (s)',ylab='velocity (mm/s)',main='24d01 velocity')
+attach(d2402dr)
+plot(time,vel,xlab='time (s)',ylab='velocity (mm/s)',main='24d02 velocity')
+```
+
+Seen above are the velocity plots of the same experiments. All experiments had a max velocity of ~30 m/s except for V01, which can be explained by its very gentle deformation curve. These results are in contrast to those found by Javier et al [2], where the velocity was found to increase with aging in atmospheric pressure due to the specimens losing stiffness. 
+
+Fontaine et al [1] performed quasistatic tension and bending experiments on thin CFE sheets aged in identical conditions. He found that in-plane properties of his CFE sheets did not degrade with aging, but out of plane properties did. Koudela and Strait [3] derived an equation for predicting the buckling pressure of anisotropic tubes starting from the von Mises equation for isotropic tubes. They found that the buckling pressure was only a function of specimen geometry and in-plane properties. The data gathered herein for this work follows the trends found by Fontaine et al., demonstrating there is a consistency in CFE mechanical behavior when aged at pressure despite different the materials coming in different shapes from different manufacturers. 
+
+## Conclusions
+
+CFE tubes were aged in 3.5% saline at 6000 psi and made to implode by hydrostatic pressure. The intent was to study the effects of saline exposure at high pressure on the implosion and collapse behaviors of these structures. High speed digital photography and 3D digital image correlation was used to record and analyze these events. Additionally, the results derived from this study were compared to previous studies which investigated: the behavior of CFE tubes after saline weathering in atmospheric pressure, and the behavior of CFE laminates after weathering in saline at 6000 psi. From this study and comparing to previous work, the following conclusions were reached:
+- Exposure to saline for extended periods at 6000 psi does not significantly affect the CFE tube’s critical implosion pressure. These results are supported by the conclusions of Fontaine et al. who noted that the elastic moduli of vacuum infused CFE sheets did not change significantly under identical aging conditions. 
+- Comparing results against Javier et al. also support this conclusion because the large differences in collapse behavior noted by Javier et al. were not observed in this work.
+
+## References
+
+[1] Fontaine D, LeBlanc J, Shukla A., “Blast response of carbon-fiber/epoxy laminates subjected to long-term seawater exposure at sea floor depth pressures” Composites Part B: Engineering 2021;215:108647. https://doi.org/10.1016/j.compositesb.2021.108647.
+
+[2] Carlos Javier, Helio Matos, Arun Shukla (2018), “Hydrostatic and blast initiated implosion of environmentally degraded Carbon-Epoxy composite cylinders”. Composite Structures 202:897–908. https://doi.org/10.1016/J.COMPSTRUCT.2018.04.055
+
+[3] Koudela KL, Strait LH. Simplified Methodology for Prediction of Critical Buckling Pressure for Smooth-Bore Composite Cylindrical Shells. Journal of Reinforced Plastics and Composites. 1993;12(5):570-583. doi:10.1177/073168449301200507
